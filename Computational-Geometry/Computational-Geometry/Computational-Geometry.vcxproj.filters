@@ -31,5 +31,8 @@
     <ClInclude Include="Plane.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Intersect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
