@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "Line.h"
+#include "Plane.h"
 #include "Point.h"
 #include "Vector.h"
 
@@ -18,9 +19,13 @@ int main()
     zzh::Point3f p2{ 2.0f, 3.0f, 4.0f };
     zzh::Line3f line(p1, p2 - p1);
 
+    zzh::Vector3f normal{1.0f,1.0f, 1.0f};
+    zzh::Plane3f plane(p1, normal);
+
     std::cout << "p1:" << p1 << std::endl;
     std::cout << "p2:" << p2 << std::endl;
     std::cout << "line:" << line << std::endl;
+    std::cout << "plane:" << plane << std::endl;
 
     return 0;
 }

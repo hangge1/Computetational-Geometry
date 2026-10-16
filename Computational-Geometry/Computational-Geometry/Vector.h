@@ -119,6 +119,8 @@ namespace zzh {
 
     typedef Vector<float, DIM2> Vector2f;
     typedef Vector<float, DIM3> Vector3f;
+    typedef Vector<double, DIM2> Vector2d;
+    typedef Vector<double, DIM3> Vector3d;
 
     template<typename elem_type, size_t dim = DIM3>
     std::ostream& operator<<(std::ostream& os, const Vector<elem_type, dim>& vec) {

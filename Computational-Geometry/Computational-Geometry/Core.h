@@ -4,10 +4,15 @@
 
 namespace zzh {
 
-constexpr float Tolerance = 1e-6f;
+constexpr float fTolerance = 1e-6f;
+constexpr double dTolerance = 1e-12f;
 
 bool isEqual(float a, float b) {
-    return std::fabs(a - b) <= Tolerance;
+    return std::fabs(a - b) <= fTolerance;
+}
+
+bool isEqual(double a, double b) {
+    return std::fabs(a - b) <= dTolerance;
 }
 
 }

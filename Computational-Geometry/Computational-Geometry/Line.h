@@ -7,19 +7,22 @@ namespace zzh {
     class Line {
         static_assert(dim >= DIM2, "Line dimension must greater equal than 2");
         static_assert(std::is_arithmetic<elem_type>::value, "Line element type must be arithmetic type");
+
+        typedef Point<elem_type, dim> PointType;
+        typedef Vector<elem_type, dim> VectorType;
     public:
-        Line(const Point<elem_type, dim>& point, const Vector<elem_type, dim>& direction)
+        Line(const PointType& point, const VectorType& direction)
             : point(point), direction(direction) {}
 
-        Line(const Point<elem_type, dim>& point1, const Point<elem_type, dim>& point2)
-            : point(point1), direction(point2-point1) {
+        Line(const PointType& point1, const PointType& point2)
+            : point(point1), direction(point2 - point1) {
         }
 
-        Point<elem_type, dim> getPoint() const { return point; }
-        Vector<elem_type, dim> getDirection() const { return direction; }
+        PointType getPoint() const { return point; }
+        VectorType getDirection() const { return direction; }
     private:
-        Point<elem_type, dim> point;
-        Vector<elem_type, dim> direction;
+        PointType point;
+        VectorType direction;
     };
 
     template<typename elem_type, size_t dim>
@@ -31,5 +34,6 @@ namespace zzh {
     typedef Line<float, DIM2> Line2f;
     typedef Line<float, DIM3> Line3f;
 
-
+    typedef Line<double, DIM2> Line2d;
+    typedef Line<double, DIM3> Line3d;
 }
